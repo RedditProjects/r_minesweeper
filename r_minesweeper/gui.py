@@ -35,4 +35,5 @@ class Application(Frame):
 
 app = Application()
 app.pack_propagate(0)
-app.master.title("r_Mindsweeper")app.mainloop()
+app.master.title("r_Mindsweeper")
+app.mainloop()
