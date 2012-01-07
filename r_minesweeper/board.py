@@ -70,7 +70,6 @@ class board: # The board which the game is played on, stores the board itself
                     # If the [q, p] coord is on the board:
                     if x+q >= 0 and x+q < self.board_size and y+p >= 0 and y+p < self.board_size:
                         if self.b[y+p][x+q].state == 0 and self.b[y+p][x+q].hidden == True:
-                            print([x+q, y+p])
                             self.unhide([x+q, y+p])
                         self.b[y+p][x+q].hidden = False
             
@@ -78,7 +77,7 @@ class board: # The board which the game is played on, stores the board itself
     def print_state(self, all_unhide=False): # Prints the board
         if all_unhide == True: # Used for printing the entire board
             for i in self.b:
-                print([a.state for a in i]) 
+                print([str(a.state).rjust(2) for a in i]) 
         else: # Used for printing only the unhidden tiles
             temp_table = []
             for i in self.b:
@@ -90,4 +89,4 @@ class board: # The board which the game is played on, stores the board itself
                         line[i] = -2
                     else:
                         line[i] = line[i].state
-                print(line)
+                print([str(x).rjust(2) for x in line])

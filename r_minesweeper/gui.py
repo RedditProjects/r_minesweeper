@@ -5,7 +5,7 @@ TODO:
     -Dynamically add and remove titles
 """
 
-from Tkinter import *
+from tkinter import *
 
 class Application(Frame):
     def __init__(self, master=None):
