@@ -14,13 +14,13 @@ bd = board.board(board_size, num_bombs)
 bd.print_state(True) # Prints the whole board
 
 while True:
-    x = int(input("Enter an x coord (0-9): "))
+    x = int(input("Enter an x coord (0-9): ")) # Asm for user input
     y = int(input("Enter a y coord (0-9): "))
     if x >= 0 and x < board_size and y >= 0 and y < board_size:
-        if bd.b[y][x].state == -1:
+        if bd.b[y][x].state == -1: # End if there is a bomb
             print("You lose!")
         else:
-            bd.unhide([x, y])
+            bd.unhide([x, y]) # Unhide if not
             bd.print_state()
     else:
         print("Bad coordinates!")

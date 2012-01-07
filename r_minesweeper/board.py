@@ -64,7 +64,7 @@ class board: # The board which the game is played on, stores the board itself
         x = pos[0]
         y = pos[1]
         self.b[y][x].hidden = False
-        if self.b[y][x].state == 0:
+        if self.b[y][x].state == 0: #If it is 0, unhide all tiles around it
             for p in range(-1, 2):
                 for q in range(-1, 2):
                     # If the [q, p] coord is on the board:
