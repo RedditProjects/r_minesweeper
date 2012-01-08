@@ -5,7 +5,9 @@ TODO:
     -Dynamically add and remove titles
 """
 
-from tkinter import *
+from Tkinter import *
+#seconds, minutes
+time = 0
 
 class Application(Frame):
     def __init__(self, master=None):
@@ -14,10 +16,6 @@ class Application(Frame):
         self.createWidgets()
 
     def createWidgets(self):
-        ##self.menubar = Menu(self)
-        ##self.menubar.add_command(label='New Game')
-        ##self.menubar.add_command(label='Quit')
-        ##self.config(menu=menubar)
         self.quitButton = Button(self, text='Quit', command=self.quit)
         self.quitButton.grid()
         self.newButton = Button(self, text='New Game')
@@ -32,6 +30,13 @@ class Application(Frame):
         for i in range(noMines):
             pass
 
+
+def Time(self):
+    global time
+    time += 1
+    text = time
+    self.time.config(text=text)
+    self.time.update_idletasks()
 
 app = Application()
 app.pack_propagate(0)
